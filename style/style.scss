@@ -1,0 +1,140 @@
+// FONT
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+// COLORS
+// primary
+$c-Cyan: hsl(179, 62%, 43%);
+$c-Bright-Yellow: hsl(71, 73%, 54%);
+
+// neutral
+$c-Light-Gray: hsl(204, 43%, 93%);
+$c-Grayish-Blue: hsl(218, 22%, 67%);
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Karla;
+}
+
+body {
+	width: 85%;
+	height: 100vh;
+	display: grid;
+	align-items: end;
+	margin: auto;
+	background-color: $c-Light-Gray;
+	font-size: 16px;
+
+	header {
+		background-color: white;
+		padding: 25px;
+		border-radius: 5px 5px 0 0;
+
+		h1 {
+			font-size: 1.1rem;
+			color: $c-Cyan;
+		}
+
+		p:nth-child(2) {
+			color: $c-Bright-Yellow;
+			padding-top: 25px;
+			font-weight: bold;
+		}
+
+		p:nth-child(3) {
+			color: $c-Grayish-Blue;
+			padding-top: 25px;
+			font-size: 0.8rem;
+			line-height: 25px;
+		}
+	}
+
+	main {
+		color: white;
+		align-self: flex-start;
+
+		.subscription, .why-us {
+			padding: 25px;
+
+			p {
+				color: $c-Light-Gray;
+			}
+
+			h2 {
+				font-size: 1.1rem;
+				font-weight: 500;
+			}
+		}
+
+		.subscription {
+			background-color: $c-Cyan;
+
+			p:nth-child(2) {
+				padding-top: 20px;
+				display: flex;
+				align-items: center;
+				color: rgba($color: $c-Light-Gray, $alpha: 0.6);
+				span {
+					font-size: 1.7rem;
+					font-weight: 500;
+					color: white;
+					padding-right: 15px;
+				}
+			}
+
+			p:nth-child(3) {
+				padding-top: 10px;
+			}
+
+			button {
+				width: 100%;
+				margin-top: 20px;
+				padding: 15px 0;
+				border-radius: 5px;
+				border: none;
+				background-color: $c-Bright-Yellow;
+				color: white;
+				box-shadow: 0 5px 15px rgba($color: black, $alpha: 0.2);
+				cursor: pointer;
+			}
+		}
+
+		.why-us {
+			background-color: rgba($color: $c-Cyan, $alpha: 0.8);
+			border-radius: 0 0 5px 5px;
+
+			p {
+				padding-top: 25px;
+				font-size: 0.8rem;
+				line-height: 20px;
+				color: rgba($color: $c-Light-Gray, $alpha: 0.9);
+			}
+		}
+
+	}
+	
+	footer {
+		align-self: flex-end;
+	}
+}
+
+@media only screen and (min-width: 800px) {
+	body {
+		max-width: 650px;
+
+		grid-template-rows: 1fr 1.2fr;
+
+		main {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+
+			.subscription {
+				border-radius: 0 0 0 5px;
+			}
+
+			.why-us {
+				border-radius: 0 0 5px 0;
+			}
+		}
+	}
+}
